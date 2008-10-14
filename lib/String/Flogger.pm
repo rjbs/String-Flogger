@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package String::Flogger;
-# ABSTRACT - string munging for loggers
+# ABSTRACT: string munging for loggers
 
 use Params::Util qw(_ARRAYLIKE _CODELIKE);
 use Scalar::Util qw(blessed);
