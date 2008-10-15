@@ -1,4 +1,7 @@
 Revision history for String-Flogger
 
+1.001     2008-10-14
+          crank up the JSON prereq (thanks, alexchorny, for the test report)
+
 1.000     2008-10-13
           first release
