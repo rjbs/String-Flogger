@@ -1,5 +1,8 @@
 Revision history for String-Flogger
 
+{{$NEXT}}
+          fix a typo in docs (thanks MJD)
+
 1.001     2008-10-14
           crank up the JSON prereq (thanks, alexchorny, for the test report)
 
