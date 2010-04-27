@@ -34,7 +34,7 @@ The above will output:
 
   and inline some data: {{{ "look": "data!" }}}
 
-  and we can defer evaluation of %s if we want
+  and we can defer evaluation of stuff if we want
 
   while avoiding sprintfiness, if needed
 
