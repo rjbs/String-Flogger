@@ -1,6 +1,8 @@
 Revision history for String-Flogger
 
 {{$NEXT}}
+          better stringification of unblessed scalar refs (to ref(...))
+          better stringification of undef (to {{null}})
 
 1.101170  2010-04-27 14:59:36 America/New_York
           fix a typo in docs (thanks MJD)

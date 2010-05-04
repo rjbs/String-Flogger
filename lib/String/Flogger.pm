@@ -42,8 +42,10 @@ The above will output:
 
 sub _encrefs {
   my ($self, $messages) = @_;
-  return map { ref $_ ? ('{{' . $self->_stringify_ref($_) . '}}') : $_ }
-         map { blessed($_) ? sprintf('obj(%s)', "$_") : $_ }
+  return map { blessed($_) ? sprintf('obj(%s)', "$_")
+             : ref $_      ? $self->_stringify_ref($_)
+             : defined $_  ? $_
+             :              '{{null}}' }
          map { _CODELIKE($_) ? scalar $_->() : $_ }
          @$messages;
 }
@@ -51,6 +53,11 @@ sub _encrefs {
 my $JSON;
 sub _stringify_ref {
   my ($self, $ref) = @_;
+
+  if (ref $ref eq 'SCALAR' or ref $ref eq 'REF') {
+    my ($str) = $self->_encrefs([ $$ref ]);
+    return "ref($str)";
+  }
 
   require JSON;
   $JSON ||= JSON->new
@@ -60,7 +67,7 @@ sub _stringify_ref {
                 ->space_after(1)
                 ->convert_blessed(1);
 
-  return $JSON->encode($ref)
+  return '{{' . $JSON->encode($ref) . '}}'
 }
 
 sub flog {
