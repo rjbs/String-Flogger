@@ -38,6 +38,18 @@ The above will output:
 
   while avoiding sprintfiness, if needed
 
+=method flag
+
+This method is described in the synopsis.
+
+=method format_string
+
+  $flogger->format_string($fmt, \@input);
+
+This method is used to take the formatted arguments for a format string (when
+C<flog> is passed an arrayref) and turn it into a string.  By default, it just
+uses C<L<perlfunc/sprintf>>.
+
 =cut
 
 sub _encrefs {
@@ -83,10 +95,15 @@ sub flog {
 
   if (_ARRAYLIKE($input)) {
     my ($fmt, @data) = @$input;
-    return sprintf $fmt, $class->_encrefs(\@data);
+    return $class->format_string($fmt, $class->_encrefs(\@data));
   }
 
   return $class->_encrefs([ $input ]);
+}
+
+sub format_string {
+  my ($self, $fmt, @input) = @_;
+  sprintf $fmt, @input;
 }
 
 1;

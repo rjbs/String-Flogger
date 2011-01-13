@@ -1,6 +1,7 @@
 Revision history for String-Flogger
 
 {{$NEXT}}
+          add format_string method for subclassing
 
 1.101240  2010-05-04 16:25:47 America/New_York
           better stringification of unblessed scalar refs (to ref(...))
