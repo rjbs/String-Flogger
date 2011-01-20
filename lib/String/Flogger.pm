@@ -38,7 +38,7 @@ The above will output:
 
   while avoiding sprintfiness, if needed
 
-=method flag
+=method flog
 
 This method is described in the synopsis.
 
