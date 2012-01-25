@@ -1,7 +1,7 @@
 #!perl
 use strict;
 use warnings;
-use Test::More tests => 4;
+use Test::More tests => 6;
 use String::Flogger qw(flog);
 
 is(
@@ -28,3 +28,14 @@ is(
   "%s <- \\\\1",
 );
 
+like(
+  flog({foo => 'bar'}),
+  qr/foo.+bar/,
+  "hashref keys/values printed",
+);
+
+like(
+  flog(sub { +{foo => 'bar'} }),
+  qr/foo.+bar/,
+  "hashref keys/values printed",
+);
