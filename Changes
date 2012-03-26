@@ -1,6 +1,8 @@
 Revision history for String-Flogger
 
 {{$NEXT}}
+
+1.101242  2012-03-26 08:20:22 America/New_York
           make ->flog({...}) act like ->flog([ '%s', {...} ])
           (thanks, Randy Stauner)
 
