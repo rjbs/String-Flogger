@@ -98,7 +98,7 @@ sub flog {
     return $class->format_string($fmt, $class->_encrefs(\@data));
   }
 
-  return ( $class->_encrefs([ $input ]) )[0];
+  return $class->format_string('%s', $class->_encrefs([$input]));
 }
 
 sub format_string {

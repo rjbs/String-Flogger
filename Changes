@@ -1,6 +1,8 @@
 Revision history for String-Flogger
 
 {{$NEXT}}
+          make ->flog({...}) act like ->flog([ '%s', {...} ])
+          (thanks, Randy Stauner)
 
 1.101241  2011-01-13 12:31:38 America/New_York
           add format_string method for subclassing
