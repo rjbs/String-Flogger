@@ -79,6 +79,11 @@ sub _stringify_ref {
                 ->space_after(1)
                 ->convert_blessed(1);
 
+  # This is horrible.  Just horrible.  I wish I could do this with a callback
+  # passed to JSON: https://rt.cpan.org/Ticket/Display.html?id=54321
+  # -- rjbs, 2013-01-31
+  local *UNIVERSAL::TO_JSON = sub { "obj($_[0])" };
+
   return '{{' . $JSON->encode($ref) . '}}'
 }
 
