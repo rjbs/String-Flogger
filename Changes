@@ -2,6 +2,9 @@ Revision history for String-Flogger
 
 {{$NEXT}}
 
+1.101244  2013-10-15 22:35:34 America/New_York
+          update bugtracker and repo
+
 1.101243  2013-01-31 11:42:28 America/New_York
           use horrible hack to avoid dying when a data structure to log
           contains an object
