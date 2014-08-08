@@ -71,13 +71,13 @@ sub _stringify_ref {
     return "ref($str)";
   }
 
-  require JSON;
-  $JSON ||= JSON->new
-                ->ascii(1)
-                ->canonical(1)
-                ->allow_nonref(1)
-                ->space_after(1)
-                ->convert_blessed(1);
+  require JSON::MaybeXS;
+  $JSON ||= JSON::MaybeXS->new
+                         ->ascii(1)
+                         ->canonical(1)
+                         ->allow_nonref(1)
+                         ->space_after(1)
+                         ->convert_blessed(1);
 
   # This is horrible.  Just horrible.  I wish I could do this with a callback
   # passed to JSON: https://rt.cpan.org/Ticket/Display.html?id=54321

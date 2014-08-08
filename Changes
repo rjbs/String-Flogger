@@ -1,6 +1,7 @@
 Revision history for String-Flogger
 
 {{$NEXT}}
+        - switch from JSON to JSON::MaybeXS
 
 1.101244  2013-10-15 22:35:34 America/New_York
           update bugtracker and repo
