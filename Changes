@@ -1,6 +1,8 @@
 Revision history for String-Flogger
 
 {{$NEXT}}
+
+1.101246  2022-10-29 21:51:45-04:00 America/New_York
         - add some tests
         - update to require newer perl
         - update package metadata
